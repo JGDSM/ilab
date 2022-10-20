@@ -1,0 +1,235 @@
+@import 'utils/variables';
+@import 'components/type';
+
+.test--invisible{
+    display: none;
+}
+
+body.home{
+    background-color: #D9F1FC;
+    background-image: url("../assets/images/nuages.svg");
+    background-size: 300px 300px;
+
+    animation: slide 7s linear infinite;
+
+    font-family: 'Abyss', display;
+}
+
+@keyframes slide{
+    from {
+        background-position-x: 0px;
+    }
+    to {
+        background-position-x: 300px;
+    }
+}
+
+.title--home img, .home__menu, .settings__block, .credits__container{
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 60vw;
+}
+.title--home img{
+    transform: translate(-50%, -50%);
+    animation: titlemove 2s ease-in-out both;
+}
+
+@keyframes titlemove{
+    to {
+        transform: translate(-50%, -130%);
+        width: 50vw;
+    }
+}
+
+.home--visible{
+    animation: menuShow 1s ease-in-out both;
+}
+@keyframes menuShow{
+    to{
+        opacity: 1;
+    }
+}
+
+.home__menu{
+    opacity: 0;
+    text-align: center;
+    font-size: 1em;
+    width: auto;
+
+    transform: translate(-50%, 20%);
+}
+li:first-child{
+    margin-bottom: 2em;
+}
+li:nth-last-child(2){
+    margin-bottom: 1em;
+}
+.menu__el{
+    margin-bottom: 0.5em;
+    color: #3C6E90;
+}
+.menu__el--first{
+    background-color: #3C6E90;
+    color: #D9F1FC;
+    border-radius: 50px;
+    font-size: 2.5em;
+
+    padding: 20px 40px 20px 40px;
+
+    :visited{
+        color: #D9F1FC;
+    }
+}
+
+
+.settings__block, .credits__block{
+    width: 70vw;
+    height: 60vh;
+    background: #F2F7F9;
+    border: 20px dashed #7DC99D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    transform: translate(-50%, -55%);
+
+    font-size: 1.5rem;
+    padding: 1em;
+}
+
+.settings__el{
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 1em;
+}
+.settings__title, .credits__title{
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #E0EEF3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    border-radius: 34px;
+
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #7DC99D;
+
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #bbebcf;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .close__btn{
+    position: absolute;
+    right: -40px;
+    top: -30px;
+
+    background-color: #7DC99D;
+    width: 50px;
+    height: 50px;
+
+    padding: 5px;
+    border-radius: 50%;
+  }
+  .x__btn{
+    font-size: 1.5em;
+    color: #F2F7F9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .credits__elements{
+    text-align: center;
+
+    p{
+        margin-bottom: 0.5em;
+        
+        a{
+            color: #3C6E90;
+        }
+    }
+  }
+
+@media (min-width: 1000px) {
+    .home__menu{
+        font-size: 2.5em;
+        transform: translate(-50%, 10%);
+    }
+    @keyframes titlemove{
+        to {
+            transform: translate(-50%, -150%);
+            width: 50vw;
+        }
+    }
+
+    .settings__block, .credits__block{
+        width: 70vw;
+        height: 60vh;
+        background: #F2F7F9;
+        border: 20px dashed #7DC99D;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+        transform: translate(-50%, -55%);
+    
+        font-size: 3rem;
+        padding: 1em;
+    }
+    .settings__title, .credits__title{
+        margin-bottom: 1em;
+    }
+    .close__btn{
+        width: 80px;
+        height: 80px;
+      }
+    .x__btn{
+        font-size: 1em;
+    }
+}
